@@ -1,75 +1,68 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import factory.*;
-
 public class Main {
 
 	public static void main(String[] args) {
-
-		ArrayList<String> petNames = new ArrayList<String>();		
-		ArrayList<String> petQueue1 = new ArrayList<String>();
 		
-		MedFactory myMedFactory = new MedFactory();
-		AdmFactory myAdmFactory = new AdmFactory();
-		AnimalFactory myPetFactory = new AnimalFactory();
+		new CLI();
 
-		ArrayList<StaffClass> allStaffList = new ArrayList<StaffClass>();
-		ArrayList<StaffClass> vetList = new ArrayList<StaffClass>();
-		ArrayList<StaffClass> nurseList = new ArrayList<StaffClass>();
-		ArrayList<StaffClass> treineeList = new ArrayList<StaffClass>();
-		ArrayList<StaffClass> recepList = new ArrayList<StaffClass>();
-		ArrayList<StaffClass> ITList = new ArrayList<StaffClass>();
-
-		vetList.addAll(myMedFactory.createVetStaff());
-
-		nurseList.addAll(myMedFactory.createNurseStaff());
-
-		treineeList.addAll(myMedFactory.createTreineeStaff());
-
-		recepList.addAll(myAdmFactory.createRecepStaff());
-
-		ITList.addAll(myAdmFactory.createITStaff());
-
-		allStaffList.addAll(vetList);
-		allStaffList.addAll(nurseList);
-		allStaffList.addAll(treineeList);
-		allStaffList.addAll(recepList);
-		allStaffList.addAll(ITList);
-
-		ArrayList<AnimalClass> allPetList = new ArrayList<AnimalClass>();
-		ArrayList<AnimalClass> dogList = new ArrayList<AnimalClass>();
-		ArrayList<AnimalClass> catList = new ArrayList<AnimalClass>();
-		ArrayList<AnimalClass> rabbitList = new ArrayList<AnimalClass>();
-
-		dogList.addAll(myPetFactory.createDogs());
-
-		catList.addAll(myPetFactory.createCats());
-
-		rabbitList.addAll(myPetFactory.createRabbits());
-
-		allPetList.addAll(dogList);
-		allPetList.addAll(catList);
-		allPetList.addAll(rabbitList);
-
-		QueueGenerator animalQueue1 = new QueueGenerator(allPetList.size()/3);
-		QueueGenerator animalQueue2 = new QueueGenerator(allPetList.size()/3);
-		QueueGenerator animalQueue3 = new QueueGenerator(allPetList.size()/3);
-		
-		for (int i = 0; i < allPetList.size()/3; i++) {
-			String input = allPetList.get(i).getName();
-			
-			animalQueue1.insertToQueue(input);
-			petQueue1.add(i, input);
-		}
-			animalQueue1.removeFromQueue();
-			animalQueue1.removeFromQueue();
+//		ArrayList<String> petNames = new ArrayList<String>();		
+//		ArrayList<String> petQueue1 = new ArrayList<String>();
+//		
+//		MedFactory myMedFactory = new MedFactory();
+//		AdmFactory myAdmFactory = new AdmFactory();
+//		AnimalFactory myPetFactory = new AnimalFactory();
+//
+//		ArrayList<StaffClass> allStaffList = new ArrayList<StaffClass>();
+//		ArrayList<StaffClass> vetList = new ArrayList<StaffClass>();
+//		ArrayList<StaffClass> nurseList = new ArrayList<StaffClass>();
+//		ArrayList<StaffClass> treineeList = new ArrayList<StaffClass>();
+//		ArrayList<StaffClass> recepList = new ArrayList<StaffClass>();
+//		ArrayList<StaffClass> ITList = new ArrayList<StaffClass>();
+//
+//		vetList.addAll(myMedFactory.createVetStaff());
+//
+//		nurseList.addAll(myMedFactory.createNurseStaff());
+//
+//		treineeList.addAll(myMedFactory.createTreineeStaff());
+//
+//		recepList.addAll(myAdmFactory.createRecepStaff());
+//
+//		ITList.addAll(myAdmFactory.createITStaff());
+//
+//		allStaffList.addAll(vetList);
+//		allStaffList.addAll(nurseList);
+//		allStaffList.addAll(treineeList);
+//		allStaffList.addAll(recepList);
+//		allStaffList.addAll(ITList);
+//
+//		ArrayList<AnimalClass> allPetList = new ArrayList<AnimalClass>();
+//		ArrayList<AnimalClass> dogList = new ArrayList<AnimalClass>();
+//		ArrayList<AnimalClass> catList = new ArrayList<AnimalClass>();
+//		ArrayList<AnimalClass> rabbitList = new ArrayList<AnimalClass>();
+//
+//		dogList.addAll(myPetFactory.createDogs());
+//
+//		catList.addAll(myPetFactory.createCats());
+//
+//		rabbitList.addAll(myPetFactory.createRabbits());
+//
+//		allPetList.addAll(dogList);
+//		allPetList.addAll(catList);
+//		allPetList.addAll(rabbitList);
+//
+//		QueueGenerator animalQueue1 = new QueueGenerator(allPetList.size()/3);
+//		QueueGenerator animalQueue2 = new QueueGenerator(allPetList.size()/3);
+//		QueueGenerator animalQueue3 = new QueueGenerator(allPetList.size()/3);
+//		
+//		for (int i = 0; i < allPetList.size()/3; i++) {
+//			String input = allPetList.get(i).getName();
+//			
+//			animalQueue1.insertToQueue(input);
+//			petQueue1.add(i, input);
+//		}
+//			animalQueue1.removeFromQueue();
+//			animalQueue1.removeFromQueue();
 		
 //		Trying to create a map with staffname as value and index as key;
 //		Map<String, Integer> convertedMap = new HashMap<String, Integer>();
@@ -244,115 +237,53 @@ public class Main {
 //	}
 	}
 
-//		System.out.println("Binary Search");
-//		int position2 = binarySearch(target.toUpperCase(), petNames);
-//		if (position2 == -1) {
-//			System.out.println("Not there");
-//		} else {
-//			System.out.println(allPetList.get(position2).toString());
-//		}
+//	public static int linearSearchStaff(String target, List<StaffClass> pool) {
 //
-//	}
-
-	public static int linearSearchStaff(String target, List<StaffClass> pool) {
-
-		boolean found = false;
-		int i = 0;
-		do {
-			if (pool.get(i).getName().equalsIgnoreCase(target)) {
-				found = true;
-				return i;
-			}
-			i++;
-		} while (!found && i < pool.size());
-		return -1;
-	}
-
-	public static ArrayList<Integer> linearSearchAnimal(String target, List<String> pool) {
-
-		int i = 0;
-		ArrayList<Integer> indexArray = new ArrayList<Integer>();
-
-		do {
-			if (pool.get(i).equalsIgnoreCase(target)) {
-				indexArray.add(i);
-			}
-			i++;
-		} while (i < pool.size());
-		if (indexArray.size() == 0) {
-			indexArray.add(-1);
-			return indexArray;
-		}
-		return indexArray;
-	}
-
-//	public static int binarySearch(String target, List<String> pool) {
-//
-//		int low = 0;
-//		int high = pool.size();
-//		int mid = 0;
-//
-//		// THis is the condition to stop the search
-//		while (low < high) {
-//
-//			mid = (high + low) / 2;
-//			System.out.println("low: " + low + " high: " + high + " mid: " + mid + " value: " + pool.get(mid));
-//
-//			if (pool.get(mid).equalsIgnoreCase(target)) {
-//				return mid;
-//			} else if (pool.get(mid).compareTo(target) < 0) {
-//				low = mid + 1;
-//
-//			} else if (pool.get(mid).compareTo(target) > 0) {
-//				high = mid - 1;
+//		boolean found = false;
+//		int i = 0;
+//		do {
+//			if (pool.get(i).getName().equalsIgnoreCase(target)) {
+//				found = true;
+//				return i;
 //			}
-//
-//		}
-//
+//			i++;
+//		} while (!found && i < pool.size());
 //		return -1;
 //	}
-
-//	public static ArrayList<Integer> binarySearch(String target, List<String> pool) {
 //
-//		int min = 0;
-//		int max = pool.size() - 1;
-//		int mid = 0;
+//	public static ArrayList<Integer> linearSearchAnimal(String target, List<String> pool) {
+//
+//		int i = 0;
 //		ArrayList<Integer> indexArray = new ArrayList<Integer>();
-//		ArrayList<Integer> findIndex = new ArrayList<Integer>();
 //
-//		// THis is the condition to stop the search
-//
-//		while (min <= max) {
-//			mid = (min + max) / 2;
-//			if (pool.get(mid).compareTo(target) < 0) {
-//				min = mid + 1;
-//			} else if (pool.get(mid).compareTo(target) > 0) {
-//				max = mid - 1;
-//			} else {
-//				findIndex.add(mid);
+//		do {
+//			if (pool.get(i).equalsIgnoreCase(target)) {
+//				indexArray.add(i);
 //			}
-//		}
-//		if (findIndex.size() == 0) {
+//			i++;
+//		} while (i < pool.size());
+//		if (indexArray.size() == 0) {
 //			indexArray.add(-1);
 //			return indexArray;
 //		}
-//		return findIndex;
+//		return indexArray;
 //	}
+
 	
-	public static <K, V> ArrayList<String> getKey(Map<K, V> map, V value) {
-		
-		ArrayList<String> listNameTasks = new ArrayList<String>();
-		
-		for (K key : map.keySet()) {
-			if (value.equals(map.get(key))) {
-				listNameTasks.add((String) key);
-			}
-		}
-		if (listNameTasks.size() == 0) {
-			return null;
-		}
-		return listNameTasks;
-	}
+//	public static <K, V> ArrayList<String> getKey(Map<K, V> map, V value) {
+//		
+//		ArrayList<String> listNameTasks = new ArrayList<String>();
+//		
+//		for (K key : map.keySet()) {
+//			if (value.equals(map.get(key))) {
+//				listNameTasks.add((String) key);
+//			}
+//		}
+//		if (listNameTasks.size() == 0) {
+//			return null;
+//		}
+//		return listNameTasks;
+//	}
 	
 	
 	
