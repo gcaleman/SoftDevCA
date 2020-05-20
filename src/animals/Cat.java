@@ -5,16 +5,17 @@ import main.AnimalClass;
 
 public class Cat extends AnimalClass implements Animal {
 
-	public Cat(String name, double age, String illness) {
-		super(name, age, illness);
+	public Cat(String name, double age, String illness, String type) {
+		super(name, age, illness, type);
 		this.age = age;
 		this.name = name;
 		this.illness = illness;
+		this.type = type;
 	}
 
 	@Override
 	public void draw() {
-		System.out.println("Inside Cat::draw() method.");
+		// TODO Auto-generated method stub
 		
 	}
 

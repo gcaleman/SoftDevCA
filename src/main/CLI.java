@@ -164,6 +164,20 @@ public class CLI {
 		return option;
 	}
 
+	public String userNameInput() {
+		BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
+		String name = null;
+
+		try {
+
+			name = myReader.readLine();
+
+		} catch (IOException e) {
+			System.out.println("Thats is not a valid name.");
+		}
+		return name;
+	}
+
 	private boolean validOption(int option) {
 		return option >= 0 && option <= 10;
 	}
@@ -192,8 +206,26 @@ public class CLI {
 	}
 
 	private void searchAnimalName() {
-		// TODO Auto-generated method stub
+		System.out.println("Type name, or type 'exit' to exit: ");
+		String target = userNameInput();
+		if (target.equalsIgnoreCase("exit")) {
+			selectOptions();
+		} else {
+			for (AnimalClass cs : allPetList) {
+				petNames.add(cs.getName());
 
+			}
+			ArrayList<Integer> position = searchAnimal(target, petNames);
+			if (position.contains(-1)) {
+				System.out.println("Not there");
+			} else {
+				for (int i = 0; i < position.size(); i++) {
+					int index = position.get(i);
+					System.out.println(allPetList.get(index).toString());
+				}
+
+			}
+		}
 	}
 
 	private void listAllAnimalsTypes() {
@@ -201,16 +233,18 @@ public class CLI {
 
 		do {
 			do {
-				System.out.println("Select a categorie: ");
-				for (int i = 0; i < staffCategories.length; i++) {
-					System.out.println("Press " + (i + 1) + " to " + staffCategories[i] + ".");
+				System.out.println("Select a animal type: ");
+				for (int i = 0; i < animalTypes.length; i++) {
+					System.out.println("Press " + (i + 1) + " to " + animalTypes[i] + ".");
 				}
 				System.out.println("Press 0 to exit.");
 
 				animalType = userAnimalTypeInput();
 			} while (!validAnimalTypeOption(animalType));
 
-			if (animalType == 1) {
+			if (animalType == 0) {
+				selectOptions();
+			} else if (animalType == 1) {
 				System.out.println("The current list of dogs in the system is: ");
 				System.out.println(" ");
 				for (AnimalClass cs : dogList) {
@@ -252,7 +286,6 @@ public class CLI {
 			}
 
 		} while (animalType != 0);
-		selectOptions();
 	}
 
 	private void listAllAnimals() {
@@ -271,8 +304,18 @@ public class CLI {
 	}
 
 	private void searchStaffName() {
-		// TODO Auto-generated method stub
-
+		System.out.println("Type name, or type 'exit' to exit: ");
+		String target = userNameInput();
+		if (target.equalsIgnoreCase("exit")) {
+			selectOptions();
+		} else {
+			int position = searchStaff(target, allStaffList);
+			if (position == -1) {
+				System.out.println("Not there");
+			} else {
+				System.out.println(allStaffList.get(position).toString());
+			}
+		}
 	}
 
 	private void listAdminStaffTask() {
@@ -296,8 +339,7 @@ public class CLI {
 			} while (!validCategorieOption(categorie));
 			if (categorie == 0) {
 				selectOptions();
-			}
-			else if (categorie == 1) {
+			} else if (categorie == 1) {
 				System.out.println("The current Veterinarians in the Staff are: ");
 				for (StaffClass cs : vetList) {
 
@@ -363,7 +405,7 @@ public class CLI {
 		selectOptions();
 	}
 
-	public static int SearchStaff(String target, List<StaffClass> pool) {
+	public static int searchStaff(String target, List<StaffClass> pool) {
 
 		boolean found = false;
 		int i = 0;
@@ -377,7 +419,7 @@ public class CLI {
 		return -1;
 	}
 
-	public static ArrayList<Integer> SearchAnimal(String target, List<String> pool) {
+	public static ArrayList<Integer> searchAnimal(String target, List<String> pool) {
 
 		int i = 0;
 		ArrayList<Integer> indexArray = new ArrayList<Integer>();

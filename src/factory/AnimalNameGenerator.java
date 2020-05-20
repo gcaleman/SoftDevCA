@@ -27,10 +27,9 @@ public class AnimalNameGenerator {
 			"Delilah", "Destiny", "Diamond", "Diva", "Dixie", "Dolly", "Duchess", "Eden", "Edie", "Ella", "Ellie",
 			"Elsa", "Emma", "Emmy", "Eva", "Faith", "Fanny", "Fern", "Fiona", "Foxy" };
 
-	protected String[] catIllness = { "Aspergillosis", "Avian influenza in cats", "Bladder cancer in cats and dogs",
-			"Bone cancer in cats and dogs", "Cancer in cats", "Cat flu", "Feline calicivirus", "originating from swine",
-			"Toxoplasmosis caused by Toxoplasma gondii", "Tritrichomonas blagburni", "Tyzzer's disease",
-			"Vaccine-associated sarcoma" };
+	protected String[] catIllness = { "Aspergillosis", "Avian influenza in cats", "Bladder cancer", "Bone cancer",
+			"Cancer in cats", "Cat flu", "Feline calicivirus", "Toxoplasmosis caused by Toxoplasma gondii",
+			"Tritrichomonas blagburni", "Tyzzer's disease", "Vaccine-associated sarcoma" };
 
 	protected String[] dogIllness = { "Canine Coronavirus", "Canine Distemper", "Canine Hepatitis", "Canine Influenza",
 			"Canine Parainfluenza", "Kennel Cough", "Leptospirosis", "Parvovirus" };

@@ -19,6 +19,7 @@ public class AnimalFactory {
 	public ArrayList<AnimalClass> createDogs() {
 
 		for (int i = 0; i < 400; i++) {
+			String type = "Dog";
 
 			ArrayList<String> listPetName = myANG.getRandomName();
 			ArrayList<String> listDogIllness = myANG.getRandomDogIllness();
@@ -27,7 +28,7 @@ public class AnimalFactory {
 			String dogName = listPetName.get(i);
 			String dogIllness = listDogIllness.get(i);
 
-			AnimalClass someDog = new Dog(dogName, dogAge, dogIllness);
+			AnimalClass someDog = new Dog(dogName, dogAge, dogIllness, type);
 
 			dog.add(someDog);
 
@@ -38,7 +39,8 @@ public class AnimalFactory {
 	public ArrayList<AnimalClass> createCats() {
 
 		for (int i = 0; i < 400; i++) {
-
+			String type = "Cat";
+			
 			ArrayList<String> listPetName = myANG.getRandomName();
 			ArrayList<String> listCatIllness = myANG.getRandomCatIllness();
 			double catAge = myANG.animalAge();
@@ -46,7 +48,7 @@ public class AnimalFactory {
 			String catName = listPetName.get(i);
 			String catIllness = listCatIllness.get(i);
 
-			AnimalClass someCat = new Cat(catName, catAge, catIllness);
+			AnimalClass someCat = new Cat(catName, catAge, catIllness, type);
 
 			cat.add(someCat);
 
@@ -57,7 +59,8 @@ public class AnimalFactory {
 	public ArrayList<AnimalClass> createRabbits() {
 
 		for (int i = 0; i < 400; i++) {
-
+			String type = "Rabbit";
+			
 			ArrayList<String> listPetName = myANG.getRandomName();
 			ArrayList<String> listRabbitIllness = myANG.getRandomRabbitIllness();
 			double rabbitAge = myANG.animalAge();
@@ -65,7 +68,7 @@ public class AnimalFactory {
 			String rabbitName = listPetName.get(i);
 			String rabbitIllness = listRabbitIllness.get(i);
 
-			AnimalClass someRabbit = new Rabbit(rabbitName, rabbitAge, rabbitIllness);
+			AnimalClass someRabbit = new Rabbit(rabbitName, rabbitAge, rabbitIllness, type);
 
 			rabbit.add(someRabbit);
 
