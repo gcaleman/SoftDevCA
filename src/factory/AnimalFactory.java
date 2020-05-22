@@ -14,7 +14,6 @@ public class AnimalFactory {
 	ArrayList<AnimalClass> rabbit = new ArrayList<AnimalClass>();
 
 	AnimalNameGenerator myANG = new AnimalNameGenerator();
-	
 
 	public ArrayList<AnimalClass> createDogs() {
 
@@ -40,11 +39,11 @@ public class AnimalFactory {
 
 		for (int i = 0; i < 400; i++) {
 			String type = "Cat";
-			
+
 			ArrayList<String> listPetName = myANG.getRandomName();
 			ArrayList<String> listCatIllness = myANG.getRandomCatIllness();
 			double catAge = myANG.animalAge();
-	
+
 			String catName = listPetName.get(i);
 			String catIllness = listCatIllness.get(i);
 
@@ -58,9 +57,9 @@ public class AnimalFactory {
 
 	public ArrayList<AnimalClass> createRabbits() {
 
-		for (int i = 0; i < 400; i++) {
+		for (int i = 0; i < 200; i++) {
 			String type = "Rabbit";
-			
+
 			ArrayList<String> listPetName = myANG.getRandomName();
 			ArrayList<String> listRabbitIllness = myANG.getRandomRabbitIllness();
 			double rabbitAge = myANG.animalAge();

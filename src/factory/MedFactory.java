@@ -12,10 +12,12 @@ public class MedFactory {
 	ArrayList<StaffClass> treineeStaff = new ArrayList<StaffClass>();
 
 	NameGenerator myNG = new NameGenerator();
-	int salary = 1000;
+	int salary1 = 250;
+	int salary4 = 420;
+	int salary5 = 500;
 
 	public ArrayList<StaffClass> createVetStaff() {
-
+		String occupation = "Veterinarian";
 		for (int i = 0; i < 5; i++) {
 
 			ArrayList<String> listStaffName = myNG.getRandomName();
@@ -23,7 +25,7 @@ public class MedFactory {
 
 			String staffName = listStaffName.get(i);
 
-			StaffClass someVet = new Vet(staffName, staffNumber, salary);
+			StaffClass someVet = new Vet(staffName, staffNumber, salary5, occupation);
 
 			vetStaff.add(someVet);
 
@@ -32,7 +34,7 @@ public class MedFactory {
 	}
 
 	public ArrayList<StaffClass> createNurseStaff() {
-
+		String occupation = "Nurse";
 		for (int i = 5; i < 21; i++) {
 
 			ArrayList<String> listStaffName = myNG.getRandomName();
@@ -40,7 +42,7 @@ public class MedFactory {
 
 			String staffName = listStaffName.get(i);
 
-			StaffClass someNurse = new Nurse(staffName, staffNumber, salary);
+			StaffClass someNurse = new Nurse(staffName, staffNumber, salary4, occupation);
 
 			nurseStaff.add(someNurse);
 
@@ -49,7 +51,7 @@ public class MedFactory {
 	}
 
 	public ArrayList<StaffClass> createTreineeStaff() {
-
+		String occupation = "Treinee";
 		for (int i = 21; i < 30; i++) {
 
 			ArrayList<String> listStaffName = myNG.getRandomName();
@@ -57,7 +59,7 @@ public class MedFactory {
 
 			String staffName = listStaffName.get(i);
 
-			StaffClass someTreinee = new Treinee(staffName, staffNumber, salary);
+			StaffClass someTreinee = new Treinee(staffName, staffNumber, salary1, occupation);
 
 			treineeStaff.add(someTreinee);
 
@@ -65,6 +67,5 @@ public class MedFactory {
 		return treineeStaff;
 
 	}
-
 
 }

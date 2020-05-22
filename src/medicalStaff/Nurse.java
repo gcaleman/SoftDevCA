@@ -3,24 +3,18 @@ package medicalStaff;
 import interfaces.*;
 import main.StaffClass;
 
-public class Nurse extends StaffClass implements MedicalStaff {
-	
+public class Nurse extends StaffClass {
+
 	public Nurse() {
-		
+
 	}
 
-	public Nurse(String name, int staffNumber, int salary) {
-		super(name, staffNumber, salary);
+	public Nurse(String name, int staffNumber, int salary, String occupation) {
+		super(name, staffNumber, salary, occupation);
 		this.name = name;
 		this.staffNumber = staffNumber;
-		this.salary = salary;		
+		this.salary = salary;
+		this.occupation = occupation;
 	}
-
-	@Override
-	public void treatAnimal() {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 }

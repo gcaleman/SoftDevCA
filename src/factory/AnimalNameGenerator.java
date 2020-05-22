@@ -46,11 +46,8 @@ public class AnimalNameGenerator {
 	}
 
 	public ArrayList<String> getRandomName() {
-		// return a random name
 		ArrayList<String> nameList = new ArrayList<String>();
 		Random r = new Random();
-
-		// pick a firstname and surname based on length of array
 
 		for (int i = 0; i < numbAnimals; i++) {
 
@@ -65,11 +62,8 @@ public class AnimalNameGenerator {
 	}
 
 	public ArrayList<String> getRandomDogIllness() {
-		// return a random name
 		ArrayList<String> dogIllnessList = new ArrayList<String>();
 		Random r = new Random();
-
-		// pick a firstname and surname based on length of array
 
 		for (int i = 0; i < numbAnimals; i++) {
 
@@ -84,11 +78,8 @@ public class AnimalNameGenerator {
 	}
 
 	public ArrayList<String> getRandomCatIllness() {
-		// return a random name
 		ArrayList<String> catIllnessList = new ArrayList<String>();
 		Random r = new Random();
-
-		// pick a firstname and surname based on length of array
 
 		for (int i = 0; i < numbAnimals; i++) {
 
@@ -103,11 +94,9 @@ public class AnimalNameGenerator {
 	}
 
 	public ArrayList<String> getRandomRabbitIllness() {
-		// return a random name
 		ArrayList<String> rabbitIllnessList = new ArrayList<String>();
 		Random r = new Random();
 
-		// pick a firstname and surname based on length of array
 
 		for (int i = 0; i < numbAnimals; i++) {
 

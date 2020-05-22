@@ -4,18 +4,19 @@ import interfaces.*;
 import main.StaffClass;
 
 public class Receptionist extends StaffClass implements AdmStaff {
-	
+
 	protected String task;
 
 	public Receptionist() {
-		
+
 	}
-	
-	public Receptionist(String name, int staffNumber, int salary) {
-		super(name, staffNumber, salary);
+
+	public Receptionist(String name, int staffNumber, int salary, String occupation) {
+		super(name, staffNumber, salary, occupation);
 		this.name = name;
 		this.staffNumber = staffNumber;
-		this.salary = salary;		
+		this.salary = salary;
+		this.occupation = occupation;
 	}
 
 	public String getTask() {
@@ -29,8 +30,8 @@ public class Receptionist extends StaffClass implements AdmStaff {
 	@Override
 	public void Task(String task) {
 		this.task = task;
-		System.out.println("Your task is:" + this.task);
-		
+		System.out.println("Current task is:" + this.task);
+
 	}
-	
+
 }

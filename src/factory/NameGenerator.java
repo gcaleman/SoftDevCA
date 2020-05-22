@@ -16,8 +16,10 @@ public class NameGenerator {
 			"Paterson", "Young", "Watson", "Morrison", "Miller", "Fraser", "Davidson", "Gray", "Mcdonald", "Henderson",
 			"Mcmillan", "Mcintosh", "Milne", "Munro", "Ritchie", "Dickson", "Bruce", "King", "Crawford", "Docherty",
 			"Millar", "Cunningham", "Sinclair", "Williamson" };
-	
-	protected String[] tasks = {"On Holiday", "Filling", "Cleaning", "Some Task", "Some other task", "Doing nothing"};
+
+	protected String[] receptionistTasks = { "On Holidays", "Filling", "Answering Phone", "Checking Schedules",
+			"Doing nothing" };
+	protected String[] ItTasks = { "Installing Software", "Cleaning PC", "On Holidays", "Doing nothing" };
 
 	protected int currentStaffNumberMed = 2019000;
 	protected int currentStaffNumberAdm = 2019030;
@@ -27,7 +29,6 @@ public class NameGenerator {
 	}
 
 	public ArrayList<String> getRandomName() {
-		// return a random name
 		ArrayList<String> nameList = new ArrayList<String>();
 		Random r = new Random();
 
@@ -55,7 +56,6 @@ public class NameGenerator {
 
 	public int staffNumberMed() {
 
-		// to get a new license, we add 1 to the static counter and then return it
 		this.currentStaffNumberMed++;
 		return this.currentStaffNumberMed;
 
@@ -70,8 +70,6 @@ public class NameGenerator {
 	}
 
 	public int staffNumberAdm() {
-
-		// to get a new license, we add 1 to the static counter and then return it
 		this.currentStaffNumberAdm++;
 		return this.currentStaffNumberAdm;
 
@@ -84,17 +82,22 @@ public class NameGenerator {
 		return nextNumber;
 
 	}
-	
-	public String getRandomTask() {
-		// return a random name
+
+	public String getRandomReceptionistTask() {
 
 		Random r = new Random();
 
-		// pick a firstname and surname based on length of array
+		String taskName = receptionistTasks[r.nextInt(receptionistTasks.length)];
 
+		return (taskName);
 
-			String taskName = tasks[r.nextInt(tasks.length)];
+	}
 
+	public String getRandomItTask() {
+
+		Random r = new Random();
+
+		String taskName = ItTasks[r.nextInt(ItTasks.length)];
 
 		return (taskName);
 
