@@ -7,17 +7,27 @@ import animals.Dog;
 import animals.Rabbit;
 import main.AnimalClass;
 
+//Class responsible for creating the animals (dogs, cats and rabbits),
+//populating an arraylist with each respective animal type;
 public class AnimalFactory {
 
+	// ArrayLists for dog, cat and rabbit;
 	ArrayList<AnimalClass> dog = new ArrayList<AnimalClass>();
 	ArrayList<AnimalClass> cat = new ArrayList<AnimalClass>();
 	ArrayList<AnimalClass> rabbit = new ArrayList<AnimalClass>();
 
+	// Instance of the class AnimalNameGenerator;
+	// Used to get random names, illnesses and age;
 	AnimalNameGenerator myANG = new AnimalNameGenerator();
 
+	// Method responsible for creating dogs;
 	public ArrayList<AnimalClass> createDogs() {
 
+		// for loop gets 400 random names, illnesses and ages from AnimalNameGenerator
+		// class, and
+		// creates 400 dogs using the Dog class, populating the dog list with them;
 		for (int i = 0; i < 400; i++) {
+			// variable type for dog;
 			String type = "Dog";
 
 			ArrayList<String> listPetName = myANG.getRandomName();
@@ -32,12 +42,18 @@ public class AnimalFactory {
 			dog.add(someDog);
 
 		}
+		// Method returns the 'dog' list;
 		return dog;
 	}
 
+	// Method responsible for creating cats;
 	public ArrayList<AnimalClass> createCats() {
 
+		// for loop gets 400 random names, illnesses and ages from AnimalNameGenerator
+		// class, and
+		// creates 400 cats using the cat class, populating the cat list with them;
 		for (int i = 0; i < 400; i++) {
+			// variable type for dog;
 			String type = "Cat";
 
 			ArrayList<String> listPetName = myANG.getRandomName();
@@ -52,11 +68,17 @@ public class AnimalFactory {
 			cat.add(someCat);
 
 		}
+		// Method returns the 'cat' list;
 		return cat;
 	}
 
+	// Method responsible for creating rabbits;
 	public ArrayList<AnimalClass> createRabbits() {
 
+		// for loop gets 400 random names, illnesses and ages from AnimalNameGenerator
+		// class, and
+		// creates 400 rabbits using the rabbit class, populating the rabbit list with
+		// them;
 		for (int i = 0; i < 200; i++) {
 			String type = "Rabbit";
 
@@ -72,6 +94,7 @@ public class AnimalFactory {
 			rabbit.add(someRabbit);
 
 		}
+		// Method returns the 'rabbit' list;
 		return rabbit;
 	}
 

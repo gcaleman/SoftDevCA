@@ -1,19 +1,18 @@
 package medicalStaff;
 
-import java.util.ArrayList;
-
-import interfaces.*;
-import main.AnimalClass;
 import main.StaffClass;
 
+//Class responsible for encapsulating the attributes for Vets;
+//Extends the abstract class 'StaffClass';
 public class Vet extends StaffClass {
-
-	protected ArrayList<AnimalClass> vetAnimals = new ArrayList<AnimalClass>();
 
 	public Vet() {
 
 	}
 
+	// Contructor of the class;
+	// Receives the attributes name, staffNumber, salary and occupation from
+	// 'MedFactory' class;
 	public Vet(String name, int staffNumber, int salary, String occupation) {
 		super(name, staffNumber, salary, occupation);
 		this.name = name;
@@ -21,9 +20,5 @@ public class Vet extends StaffClass {
 		this.salary = salary;
 		this.occupation = occupation;
 	}
-
-//	public void addAnimal(String name, int age, String illness) {
-//		
-//	}
 
 }

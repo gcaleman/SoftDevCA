@@ -1,5 +1,7 @@
 package main;
 
+//Abstract class responsible for providing the attributes and methods 
+//for the subclasses in the packages 'admStaff' and 'medicalStaff';
 public abstract class StaffClass {
 
 	protected String name;
@@ -50,6 +52,8 @@ public abstract class StaffClass {
 		this.occupation = occupation;
 	}
 
+	// Method responsible for returning a String type of answer to the objects of
+	// the class;
 	@Override
 	public String toString() {
 

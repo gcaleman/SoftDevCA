@@ -1,16 +1,20 @@
 package admStaff;
 
-import interfaces.*;
 import main.StaffClass;
 
-public class Receptionist extends StaffClass implements AdmStaff {
-
+// Class responsible for encapsulating the attributes for Receptionists;
+//Extends the abstract class 'StaffClass';
+public class Receptionist extends StaffClass {
+	// Attribute to hold the task which the receptionist is responsible for;
 	protected String task;
 
 	public Receptionist() {
 
 	}
 
+	// Contructor of the class;
+	// Receives the attributes name, staffNumber, salary and occupation from
+	// 'AdmFactory' class;
 	public Receptionist(String name, int staffNumber, int salary, String occupation) {
 		super(name, staffNumber, salary, occupation);
 		this.name = name;
@@ -19,19 +23,14 @@ public class Receptionist extends StaffClass implements AdmStaff {
 		this.occupation = occupation;
 	}
 
+	// Setter and Getter for task;
+	// Return the task which was sent to the receptionist created;
 	public String getTask() {
 		return task;
 	}
 
 	public void setTask(String task) {
 		this.task = task;
-	}
-
-	@Override
-	public void Task(String task) {
-		this.task = task;
-		System.out.println("Current task is:" + this.task);
-
 	}
 
 }
